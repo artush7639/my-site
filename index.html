@@ -1,208 +1,231 @@
-Арт, [17 июля 2025 г., 16:45:21]:
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <title>Wedding Invitation — Мнацакан & Гаяне</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Свадьба Мнацакана и Гаяне | 19 июля 2025</title>
+  <!-- Google Fonts для красоты -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --main-bg: #f6f3ef;
+      --block-bg: #fff;
+      --accent: #d4af7a;
+      --accent2: #e0c3a0;
+      --text: #2d2d2d;
+      --soft: #f9f6f0;
+    }
     body {
-      background: linear-gradient(120deg, #f6e7ea 0%, #e4ecf7 100%);
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      color: #232323;
+      background: var(--main-bg);
+      color: var(--text);
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 32px auto;
+      background: var(--block-bg);
+      border-radius: 32px;
+      box-shadow: 0 4px 48px #e2cdaa33;
+      overflow: hidden;
+      padding-bottom: 32px;
     }
     header {
       text-align: center;
-      padding: 40px 20px 20px 20px;
+      background: linear-gradient(120deg, var(--accent2) 0%, var(--block-bg) 100%);
+      padding: 36px 20px 24px;
     }
     .names {
-      font-size: 2.4em;
-      letter-spacing: 0.04em;
-      font-weight: 700;
-      color: #cb97c4;
-      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2em;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 12px;
     }
     .date {
-      font-size: 1.1em;
-      color: #717171;
-      margin-bottom: 24px;
+      color: #9a7a44;
+      font-weight: 600;
+      font-size: 1.25em;
     }
-    .invite-text {
+    .photo-main {
+      width: 95%;
+      max-width: 500px;
+      border-radius: 20px;
+      margin: 24px auto 12px;
+      display: block;
+      box-shadow: 0 6px 28px #bfa97e33;
+      transition: transform .4s cubic-bezier(.23,1.05,.74,1.03);
+    }
+    .photo-main:hover {
+      transform: scale(1.025) rotate(-1deg);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
       font-size: 1.3em;
-      color: #444;
-      margin-bottom: 32px;
+      text-align: center;
+      margin: 28px 0 16px;
+    }
+    .event-list {
+      margin: 0 auto 18px;
+      list-style: none;
+      padding: 0;
+      max-width: 420px;
+      font-size: 1.12em;
+    }
+    .event-list li {
+      margin-bottom: 15px;
+      padding: 12px 20px;
+      background: var(--soft);
+      border-radius: 15px;
+      box-shadow: 0 1px 8px #efd6b54d;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background .3s;
+    }
+    .event-list li:hover {
+      background: var(--accent2);
+    }
+    .event-time {
+      font-weight: bold;
+      color: var(--accent);
+      min-width: 68px;
     }
     .gallery {
       display: flex;
-      gap: 20px;
-      justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      gap: 12px;
+      justify-content: center;
+      margin: 0 0 32px;
     }
     .gallery img {
-      width: 220px;
-      height: 310px;
+      width: 120px;
+      height: 120px;
       object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 4px 22px #0001;
-      border: 5px solid #fff;
-      background: #eee;
-    }
-    .schedule {
-      max-width: 540px;
-      margin: 0 auto 32px auto;
-      background: #fff;
       border-radius: 20px;
-      box-shadow: 0 2px 20px #0001;
-      padding: 28px 24px;
-      font-size: 1.1em;
-      line-height: 1.8;
+      box-shadow: 0 2px 12px #baa06733;
+      transition: transform .4s cubic-bezier(.23,1.05,.74,1.03), box-shadow .3s;
+      cursor: pointer;
+      background: #fff;
     }
-    .schedule h2 {
-      color: #ad7ca7;
-      margin-bottom: 10px;
-      font-size: 1.3em;
-    }
-    .schedule ul {
-      padding-left: 22px;
-      margin: 0;
+    .gallery img:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 8px 40px #d1b27567;
     }
     .rsvp-block {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 2px 20px #0001;
-      max-width: 480px;
-      margin: 30px auto 32px auto;
-      padding: 32px 24px;
-      text-align: center;
+      max-width: 400px;
+      margin: 0 auto 24px;
+      background: var(--soft);
+      border-radius: 18px;
+      padding: 22px 18px;
+      box-shadow: 0 2px 16px #b39b7833;
     }
-    .rsvp-block h2 {
-      color: #cb97c4;
-      margin-bottom: 18px;
-      font-size: 1.2em;
-    }
-    .rsvp-block input {
-      width: 90%;
-      max-width: 340px;
-      padding: 13px;
-      margin: 12px 0 20px 0;
-      border-radius: 7px;
-      border: 1px solid #d5b8d3;
-      font-size: 1.07em;
-      outline: none;
-      box-sizing: border-box;
-      transition: border 0.2s;
-    }
-    .rsvp-block input:focus {
-      border: 1.5px solid #ad7ca7;
-    }
-    .rsvp-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-    .rsvp-buttons button {
-      padding: 12px 32px;
-      font-size: 1.12em;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    .rsvp-block label {
+      display: block;
+      margin: 13px 0 7px;
       font-weight: 600;
-      background: linear-gradient(90deg,#cb97c4 60%,#f7b5be 100%);
+      color: #7e673b;
+      font-size: 1em;
+    }
+    .rsvp-block input,
+    .rsvp-block select {
+      width: 100%;
+      border: 1px solid #dbc8ad;
+      border-radius: 8px;
+      font-size: 1.1em;
+      padding: 8px 11px;
+      background: #fff;
+      margin-bottom: 9px;
+      transition: border .3s;
+    }
+    .rsvp-block input:focus,
+    .rsvp-block select:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+    .rsvp-block button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #c9a161, #e0c3a0);
+      border: none;
+      border-radius: 10px;
       color: #fff;
-      box-shadow: 0 2px 14px #c59bc82d;
-      transition: background 0.2s, transform 0.15s;
+      font-weight: bold;
+      font-size: 1.13em;
+      box-shadow: 0 2px 16px #c2a06433;
+      margin-top: 8px;
+      cursor: pointer;
+      transition: background .3s, transform .2s;
     }
-    .rsvp-buttons button.no {
-      background: #eaeaea;
-      color: #ad7ca7;
-      border: 1px solid #cb97c4;
+    .
+
+
+rsvp-block button:hover {
+      background: linear-gradient(90deg, #b49152, #c3a176);
+      transform: translateY(-2px) scale(1.02);
     }
-    .rsvp-buttons button:active {
-      transform: scale(0.96);
-    }
-    .rsvp-success {
-      display: none;
-      margin-top: 22px;
-      color: #3bb267;
-      font-size: 1.12em;
-    }
-    footer {
+    .footer {
       text-align: center;
-      color: #aaa;
-      padding: 20px 0 18px 0;
-      font-size: 0.98em;
+      color: #a58b62;
+      font-size: 1em;
+      margin-top: 25px;
+      padding-bottom: 7px;
     }
-    @media (max-width: 650px) {
-      .gallery img { width: 98vw; max-width: 310px; height: 220px; }
-      .gallery { gap: 10px; }
-      .schedule, .rsvp-block { padding: 18px 8px; }
+    @media (max-width: 700px) {
+      .container {
+        border-radius: 14px;
+        margin: 0 0 20px 0;
+      }
+      .gallery img { width: 95px; height: 95px;}
+      .rsvp-block {padding: 14px 6px;}
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="names">Мнацакан & Гаяне</div>
-    <div class="date">19 июля 2025 года</div>
-    <div class="invite-text">
-      Мы приглашаем вас разделить с нами самый счастливый день нашей жизни!
-    </div>
-  </header>
-
-  <div class="gallery">
-    <img src="images/wedding1.jpg" alt="Молодожёны">
-    <img src="images/wedding2.jpg" alt="Фото свадьбы">
-    <img src="images/wedding3.jpg" alt="Пара">
-    <img src="images/wedding4.jpg" alt="Декор свадьбы">
-  </div>
-
-  <div class="schedule">
-    <h2>Программа дня:</h2>
-    <ul>
-      <li><b>07:00</b> — Сбор гостей. Барвиха, дом невесты</li>
-      <li><b>10:30</b> — Венчание. Армянская церковь в Москве</li>
-      <li><b>14:00</b> — Праздничный банкет. Ресторан в Одинцово</li>
+  <div class="container">
+    <header>
+      <div class="names">Мнацакан & Гаяне</div>
+      <div class="date">19 июля 2025 • Москва</div>
+    </header>
+    <img class="photo-main" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Фото молодожёнов">
+    <div class="section-title">Дорогие друзья и близкие!</div>
+    <p style="text-align:center; margin:0 18px 20px;">
+      Приглашаем вас на нашу свадьбу — день, который станет началом нашей новой семьи. <br>
+      Мы будем счастливы разделить этот праздник вместе с вами!
+    </p>
+    <div class="section-title">Расписание торжества</div>
+    <ul class="event-list">
+      <li><span class="event-time">07:00</span> Сбор гостей в доме невесты <br><small>Барвиха</small></li>
+      <li><span class="event-time">10:30</span> Венчание в Армянской церкви <br><small>Армянский храм, Москва</small></li>
+      <li><span class="event-time">14:00</span> Праздничный банкет <br><small>Ресторан в Одинцово</small></li>
     </ul>
 
+    <div class="section-title">Фото из наших историй</div>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Фото1">
+      <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80" alt="Фото2">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Фото3">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80" alt="Фото4">
+    </div>
 
-<div style="margin-top: 12px; color:#cb97c4;">Dress code: Элегантный стиль, улыбка обязательна!</div>
-  </div>
-
-  <div class="rsvp-block">
-    <h2>Подтвердите своё присутствие</h2>
-    <form id="rsvpForm" autocomplete="off">
-      <input type="text" name="name" placeholder="Ваше ФИО" required>
-      <div class="rsvp-buttons">
-        <button type="button" class="yes" onclick="rsvp('yes')">Прийду</button>
-        <button type="button" class="no" onclick="rsvp('no')">Не прийду</button>
-      </div>
-      <div id="rsvpSuccess" class="rsvp-success"></div>
+    <div class="section-title">Подтвердите присутствие</div>
+    <form class="rsvp-block" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label for="fio">Ваше ФИО</label>
+      <input type="text" id="fio" name="fio" placeholder="Введите ФИО" required>
+      <label for="willcome">Вы придёте?</label>
+      <select id="willcome" name="willcome" required>
+        <option value="">Выберите вариант</option>
+        <option value="Да, буду">Да, обязательно буду!</option>
+        <option value="Нет, к сожалению не смогу">Нет, к сожалению не смогу</option>
+      </select>
+      <label for="comment">Комментарий (по желанию)</label>
+      <input type="text" id="comment" name="comment" placeholder="Напишите, если нужно">
+      <button type="submit">Подтвердить</button>
     </form>
+    <div class="footer">
+      С любовью, Мнацакан и Гаяне • 19.07.2025
+    </div>
   </div>
-
-  <footer>
-    С любовью, Мнацакан и Гаяне &mdash; 2025
-  </footer>
-  <script>
-    function rsvp(type) {
-      const name = document.querySelector('input[name="name"]').value.trim();
-      const msgBlock = document.getElementById('rsvpSuccess');
-      if (!name) {
-        msgBlock.style.display = 'block';
-        msgBlock.style.color = "#b33";
-        msgBlock.textContent = "Пожалуйста, введите ФИО!";
-        return;
-      }
-      // Здесь можно интегрировать отправку формы (например, Formspree или Telegram)
-      msgBlock.style.display = 'block';
-      msgBlock.style.color = "#3bb267";
-      msgBlock.textContent = (type === 'yes') ? 
-        Спасибо, ${name}! Мы будем очень рады видеть вас на нашей свадьбе 💖 : 
-        Спасибо за ответ, ${name}. Нам будет не хватать вас в этот день!;
-      setTimeout(() => { msgBlock.style.display = 'none'; }, 9000);
-      document.getElementById('rsvpForm').reset();
-    }
-  </script>
 </body>
 </html>
