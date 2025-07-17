@@ -3,120 +3,194 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Невеста для Гургена 💘</title>
+  <title>Знакомства с Гургеном</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #ffe6f0, #fff);
-      color: #333;
+      background: linear-gradient(to bottom, #fff0f5 0%, #ffe5e0 100%);
+      color: #222;
     }
     header {
-      background-color: #ff6600;
+      background: #ff6600;
       color: white;
-      padding: 20px;
       text-align: center;
-      font-size: 24px;
+      padding: 28px 0 16px 0;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
-    .intro {
-      text-align: center;
-      padding: 30px 20px;
-    }
-    .intro h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    .photos {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-    }
-    .photos img {
-      width: 300px;
+    .hero-block {
+      max-width: 500px;
+      margin: 30px auto 0;
+      background: #fff;
       border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      padding: 24px 16px 38px 16px;
+      position: relative;
     }
-    .mystery {
-      filter: blur(10px);
+    .img-btn-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
     }
-    .form-block {
+    .img-btn-wrap img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 18px;
+      display: block;
+    }
+    .hero-block h2 {
+      margin-top: 24px;
+      margin-bottom: 10px;
+      font-size: 1.8em;
+      color: #ff6600;
+    }
+    .hero-block p {
+      font-size: 1.1em;
+      margin-bottom: 22px;
+      color: #333;
+    }
+    .btn-main {
+      position: absolute;
+      left: 18px;
+      bottom: 20px;
+      padding: 12px 24px;
+      background: #ff6600;
+      color: #fff;
+      font-size: 1.1em;
+      border-radius: 30px;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(255,102,0,0.13);
+      transition: background 0.2s;
+    }
+    .btn-main:hover { background: #e25500; }
+    .btn-anketa {
+      position: absolute;
+      right: 18px;
+      bottom: 20px;
+      padding: 12px 24px;
       background: #fff0f5;
-      padding: 30px 20px;
-      margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      color: #ff6600;
+      font-size: 1.1em;
+      border-radius: 30px;
+      border: 2px solid #ff6600;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
     }
-    .form-block h3 {
+    .btn-anketa:hover { background: #ffe1ef; }
+    .section-title {
       text-align: center;
-      margin-bottom: 15px;
+      color: #ff6600;
+      font-size: 1.5em;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-weight: bold;
     }
-    .form-block form {
+    .gurgen-block {
+      max-width: 500px;
+      margin: 20px auto 0;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+      padding: 20px 14px 28px 14px;
+      text-align: center;
+    }
+    .gurgen-block img {
+      width: 170px;
+      border-radius: 50%;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 14px #ffe4f1;
+    }
+    .gurgen-block h3 {
+      color: #ff6600;
+      margin-bottom: 6px;
+    }
+    .anketa-section {
+      max-width: 500px;
+      margin: 36px auto 0;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+      padding: 28px 16px;
+    }
+    .anketa-section h3 {
+      text-align: center;
+      color: #ff6600;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    form {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
-    .form-block input, .form-block textarea {
-      padding: 10px;
+    input, textarea {
+      padding: 11px 12px;
       border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 16px;
+      border: 1px solid #ddd;
+      font-size: 1em;
     }
-    .form-block button {
-      padding: 12px;
-      background-color: #ff6600;
+    button[type="submit"] {
+      margin-top: 10px;
+      padding: 13px 0;
+      background: #ff6600;
       color: white;
+      font-size: 1.15em;
+      font-weight: bold;
       border: none;
-      font-size: 18px;
-      border-radius: 8px;
+      border-radius: 30px;
       cursor: pointer;
+      transition: background 0.2s;
     }
-    .form-block button:hover {
-      background-color: #e65500;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #999;
+    button[type="submit"]:hover { background: #e25500; }
+    @media (max-width: 650px) {
+      .hero-block, .gurgen-block, .anketa-section {
+        margin: 16px 6px 0 6px;
+        padding: 10px 4vw;
+      }
+      .img-btn-wrap img { border-radius: 10px; }
     }
   </style>
 </head>
 <body>
   <header>
-    💖 Найди свою любовь: Гурген ждёт!
+    Знакомства с Гургеном
   </header>
 
-  <section class="intro">
+  <div class="hero-block">
+    <div class="img-btn-wrap">
+      <img src="images/mystery_girl.jpg" alt="Кто станет женой Гургена?">
+      <a href="#anketa" class="btn-anketa">Оставить анкету</a>
+      <a href="https://t.
+me/yourtelegram" target="_blank" class="btn-main">Написать Гургену</a>
+    </div>
     <h2>Кто станет женой Гургена?</h2>
-    <p>Ты? Оставь анкету и узнай! 💌</p>
-  </section>
+    <p>Оставь анкету и, может быть, ты та самая!<br>Гурген ищет свою любовь ❤️</p>
+  </div>
 
-  <section class="photos">
-    <div>
-      <img src="img2.jpg" alt="Гурген">
-      <p><strong>Гурген</strong> — симпатичный, умный, готов к отношениям</p>
-    </div>
-    <div>
-      <img src="img1.jpg" class="mystery" alt="Загадочная невеста">
-      <p><em>Кто эта девушка? Может быть, ты?</em></p>
-    </div>
-  </section>
+  <div class="section-title">Главный герой</div>
+  <div class="gurgen-block">
+    <img src="images/gurgensolo.jpg" alt="Гурген">
+    <h3>Гурген</h3>
+    <p>Добрый, спортивный, целеустремлённый.<br>Ищет искреннюю и добрую девушку для отношений.</p>
+  </div>
 
-  <section class="form-block">
-    <h3>Заполни анкету 💬</h3>
+  <div class="section-title" id="anketa">Анкета для девушек</div>
+  <div class="anketa-section">
+    <h3>Заполни и стань ближе к сердцу Гургена! 💌</h3>
     <form>
       <input type="text" placeholder="Твоё имя" required>
       <input type="number" placeholder="Возраст" required>
+      <input type="text" placeholder="Город" required>
       <input type="email" placeholder="Email или Telegram" required>
-      <textarea rows="4" placeholder="Почему именно ты — идеальная пара для Гургена? 😊" required></textarea>
+      <textarea rows="4" placeholder="Расскажи о себе или почему ты хочешь познакомиться с Гургеном..." required></textarea>
       <button type="submit">Отправить анкету</button>
     </form>
-  </section>
-
-  <footer>
-    &copy; 2025 gurgen-love.github.io — Сайт создан с любовью ❤️
-  </footer>
+  </div>
 </body>
 </html>
