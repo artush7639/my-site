@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Форма на сайте</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #success {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Свяжитесь с нами</h1>
+
+    <form onsubmit="sendForm(event)">
+        <input type="text" id="name" placeholder="Ваше имя" required>
+        <input type="email" id="email" placeholder="Ваш email" required>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div id="success"></div>
+
+    <script>
+        function sendForm(event) {
+            event.preventDefault(); // отменяем перезагрузку страницы
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            // Здесь можно сохранить данные или отправить на сервер — пока просто выводим сообщение
+            document.getElementById("success").innerText = Спасибо, ${name}! Мы свяжемся с вами по ${email}.;
+
+            // очищаем форму
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+        }
+    </script>
+
+</body>
+</html>
