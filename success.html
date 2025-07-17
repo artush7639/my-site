@@ -2,25 +2,258 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Анкета отправлена!</title>
+  <title>Мнацакан & Гаяне — Свадебное приглашение</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    body { background: #fff4ef; font-family: Arial, sans-serif; }
-    .box {
-      max-width: 440px; margin: 80px auto; background: #fff;
-      border-radius: 18px; box-shadow: 0 4px 28px #ff660026;
-      text-align: center; padding: 38px 20px;
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #faf8f6;
+      color: #312f2c;
     }
-    h1 { color: #ff6600; font-size: 2em; margin-bottom: 20px; }
-    p { font-size: 1.12em; }
-    a { color: #ff6600; text-decoration: underline; }
+    .main-section {
+      background: url('images/main.jpg') center/cover no-repeat;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 80px 20px 40px 20px;
+      position: relative;
+    }
+    .main-section:after {
+      content: '';
+      position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+      background: rgba(20,10,30,0.38);
+      z-index: 1;
+    }
+    .main-section > * { position: relative; z-index: 2; }
+    .main-title {
+      font-size: 2.7em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .date {
+      font-size: 1.3em;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+    .to-couple {
+      margin-top: 12px;
+      font-size: 1.1em;
+      font-style: italic;
+      color: #f8e8ef;
+    }
+    .section {
+      max-width: 650px;
+      margin: 40px auto 0 auto;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 8px 28px #0001;
+      padding: 30px 16px 30px 16px;
+    }
+    .photo-gallery {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .photo-gallery img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2px solid #fff5;
+      box-shadow: 0 2px 8px #0001;
+      margin-bottom: 10px;
+    }
+    .schedule {
+      margin: 0 0 18px 0;
+    }
+    .schedule-item {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .schedule-time {
+      min-width: 62px;
+      font-weight: 700;
+      color: #b49ddc;
+      font-size: 1.15em;
+      margin-right: 14px;
+    }
+    .schedule-place {
+      color: #4a4682;
+      font-weight: 500;
+      font-size: 1.08em;
+    }
+    .rsvp-section {
+      margin-top: 32px;
+      text-align: center;
+    }
+    .rsvp-section form {
+      margin: 0 auto;
+      max-width: 360px;
+      background: #f5f1fc;
+      border-radius: 18px;
+      box-shadow: 0 1px 8px #0001;
+      padding: 22px 14px;
+    }
+    .rsvp-section input, .rsvp-section textarea {
+      width: 96%;
+      font-size: 1.09em;
+      margin: 8px 0 13px 0;
+      padding: 11px 13px;
+      border-radius: 7px;
+      border: 1px solid #b9b9c7;
+      outline: none;
+      transition: border .2s;
+      background: #fff;
+    }
+    .rsvp-section input:focus, .rsvp-section textarea:focus {
+      border: 1.8px solid #a79dff;
+    }
+    .rsvp-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 12px;
+      margin-bottom: 7px;
+    }
+    .rsvp-section button {
+      min-width: 120px;
+      padding: 12px 0;
+      border-radius: 8px;
+      font-size: 1.12em;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(90deg,#a489ec,#fd7bab);
+      color: #fff;
+      font-weight: 700;
+      transition: background .25s;
+    }
+    .rsvp-section .btn-outline {
+      background: #fff;
+      border: 2px solid #fd7bab;
+      color: #fd7bab;
+    }
+    .rsvp-section .btn-outline:hover {
+      background: #fd7bab;
+      color: #fff;
+    }
+    .rsvp-section button:hover {
+      background: linear-gradient(90deg,#fd7bab,#a489ec);
+    }
+    .rsvp-section #rsvp-message {
+      margin-top: 10px;
+      color: #5a3e8a;
+      font-size: 1.15em;
+      font-weight: 600;
+    }
+    .map-section {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .map-iframe {
+      border-radius: 16px;
+      border: 1px solid #ece2fa;
+      width: 98%;
+      max-width: 540px;
+
+
+height: 220px;
+      margin: 0 auto;
+    }
+    @media (max-width: 650px) {
+      .main-title { font-size: 2em; }
+      .section { padding: 18px 3vw; }
+      .main-section { min-height: 300px; padding: 46px 5vw 30px 5vw;}
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Спасибо! 💌</h1>
-    <p>Анкета успешно отправлена.<br>
-    Гурген скоро посмотрит твои ответы 😉</p>
-    <p><a href="index.html">Вернуться на главную</a></p>
+  <div class="main-section">
+    <div class="main-title">Мнацакан & Гаяне</div>
+    <div class="date">19 июля 2025</div>
+    <div class="to-couple">С радостью приглашаем Вас отпраздновать вместе с нами день нашей свадьбы!</div>
   </div>
+
+  <div class="section">
+    <div class="photo-gallery">
+      <img src="images/main.jpg" alt="Молодожёны">
+      <img src="images/couple1.jpg" alt="Фото пары">
+      <img src="images/couple2.jpg" alt="Фото пары">
+      <img src="images/couple3.jpg" alt="Фото пары">
+    </div>
+    <h2 style="text-align:center; color:#a87adc; margin-bottom:12px;">Дорогие друзья и близкие!</h2>
+    <p style="font-size:1.09em;text-align:center;">
+      Мы будем рады видеть вас на нашей свадьбе,<br>которая состоится <b>19 июля 2025 года</b>.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 style="color:#a87adc; text-align:center; margin-bottom:20px;">Расписание</h2>
+    <div class="schedule">
+      <div class="schedule-item">
+        <div class="schedule-time">07:00</div>
+        <div>
+          <div class="schedule-place">Сбор гостей у дома невесты</div>
+          <div style="color:#968;">Барвиха, адрес невесты</div>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">09:00</div>
+        <div>
+          <div class="schedule-place">Церемония венчания</div>
+          <div style="color:#968;">Армянская церковь, Москва</div>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">11:30</div>
+        <div>
+          <div class="schedule-place">Праздничный банкет</div>
+          <div style="color:#968;">Ресторан, Одинцово</div>
+        </div>
+      </div>
+    </div>
+    <div class="map-section">
+      <b>Адреса:</b><br>
+      <span>Дом невесты: Барвиха</span><br>
+      <span>Армянская церковь: <a href="https://yandex.ru/maps/-/CCUN4VCQpD" target="_blank">Сергиевский храм, Москва</a></span><br>
+      <span>Ресторан: Одинцово</span>
+      <div style="margin:14px auto 0 auto;max-width:540px;">
+        <!-- Вставь iframe Яндекс.Карты или Google -->
+        <iframe class="map-iframe" src="https://yandex.ru/map-widget/v1/?um=constructor%3A67697dc835c98d3c2c7e3f0cd7536dba5b212ea795681b5a44e59d37b3038956&amp;source=constructor" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="section rsvp-section">
+    <h2 style="color:#fd7bab;">Подтвердите своё присутствие</h2>
+    <form id="rsvp-form" action="https://formspree.io/f/mbkljrw" method="POST">
+      <input type="text" name="fio" placeholder="Ваше ФИО" required>
+      <input type="number" name="guests" min="1" max="10" placeholder="Количество гостей" required>
+      <textarea name="comment" placeholder="Комментарий (необязательно)"></textarea>
+      <div class="rsvp-btns">
+        <button type="submit" name="attend" value="Приду">Прийду</button>
+        <button type="submit" name="attend" value="Не приду" class="btn-outline">Не приду</button>
+      </div>
+      <div id="rsvp-message"></div>
+    </form>
+  </div>
+
+  <script>
+    // Красивое подтверждение (если отправка без Formspree — раскомментировать и отключить action)
+    document.getElementById('rsvp-form').onsubmit = function(e){
+      setTimeout(function(){
+        document.getElementById('rsvp-message').innerHTML = "Спасибо! Ваша заявка отправлена.";
+      }, 300);
+    }
+  </script>
 </body>
 </html>
