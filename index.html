@@ -1,83 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Форма на сайте</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            padding: 50px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            display: inline-block;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        input {
-            display: block;
-            margin: 10px auto;
-            padding: 10px;
-            width: 250px;
-            font-size: 16px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        #success {
-            margin-top: 20px;
-            color: green;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Невеста для Гургена 💘</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #fff);
+      color: #333;
+    }
+    header {
+      background-color: #ff6600;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .intro {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .intro h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .photos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .photos img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .mystery {
+      filter: blur(10px);
+    }
+    .form-block {
+      background: #fff0f5;
+      padding: 30px 20px;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .form-block h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .form-block form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .form-block input, .form-block textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .form-block button {
+      padding: 12px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .form-block button:hover {
+      background-color: #e65500;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    💖 Найди свою любовь: Гурген ждёт!
+  </header>
 
-    <h1>Свяжитесь с нами</h1>
+  <section class="intro">
+    <h2>Кто станет женой Гургена?</h2>
+    <p>Ты? Оставь анкету и узнай! 💌</p>
+  </section>
 
-    <form onsubmit="sendForm(event)">
-        <input type="text" id="name" placeholder="Ваше имя" required>
-        <input type="email" id="email" placeholder="Ваш email" required>
-        <button type="submit">Отправить</button>
+  <section class="photos">
+    <div>
+      <img src="img2.jpg" alt="Гурген">
+      <p><strong>Гурген</strong> — симпатичный, умный, готов к отношениям</p>
+    </div>
+    <div>
+      <img src="img1.jpg" class="mystery" alt="Загадочная невеста">
+      <p><em>Кто эта девушка? Может быть, ты?</em></p>
+    </div>
+  </section>
+
+  <section class="form-block">
+    <h3>Заполни анкету 💬</h3>
+    <form>
+      <input type="text" placeholder="Твоё имя" required>
+      <input type="number" placeholder="Возраст" required>
+      <input type="email" placeholder="Email или Telegram" required>
+      <textarea rows="4" placeholder="Почему именно ты — идеальная пара для Гургена? 😊" required></textarea>
+      <button type="submit">Отправить анкету</button>
     </form>
+  </section>
 
-    <div id="success"></div>
-
-    <script>
-        function sendForm(event) {
-            event.preventDefault(); // отменяем перезагрузку страницы
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-
-            // Здесь можно сохранить данные или отправить на сервер — пока просто выводим сообщение
-            document.getElementById("success").innerText = Спасибо, ${name}! Мы свяжемся с вами по ${email}.;
-
-            // очищаем форму
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-        }
-    </script>
-
+  <footer>
+    &copy; 2025 gurgen-love.github.io — Сайт создан с любовью ❤️
+  </footer>
 </body>
 </html>
