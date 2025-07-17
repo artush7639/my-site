@@ -183,14 +183,11 @@ me/yourtelegram" target="_blank" class="btn-main">Написать Гурген�
   <div class="section-title" id="anketa">Анкета для девушек</div>
   <div class="anketa-section">
     <h3>Заполни и стань ближе к сердцу Гургена! 💌</h3>
-   <form action="https://formspree.io/f/mblkljrw" method="POST"></form>
-      <input type="text" placeholder="Твоё имя" required>
-      <input type="number" placeholder="Возраст" required>
-      <input type="text" placeholder="Город" required>
-      <input type="email" placeholder="Номер телнфона или Telegram" required>
-      <textarea rows="4" placeholder="Расскажи о себе или почему ты хочешь познакомиться с Гургеном..." required></textarea>
-      <button type="submit">Отправить анкету</button>
-    </form>
-  </div>
-</body>
-</html>
+<form action="https://formspree.io/f/mblkljrw" method="POST">
+  <input type="text" name="name" placeholder="Имя" required>
+  <input type="number" name="age" placeholder="Возраст" required>
+  <input type="text" name="city" placeholder="Город" required>
+  <input type="email" name="email" placeholder="Номер телефона или Telegram" required>
+  <textarea name="about" rows="4" placeholder="Расскажи о себе или почему ты хочешь познакомиться с Гургеном" required></textarea>
+  <button type="submit">Отправить анкету</button>
+</form>
